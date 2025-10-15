@@ -23,9 +23,42 @@
   
 
   
-   
+   <button id="unmute-button" style="
+        padding: 20px 40px;
+        font-size: 24px;
+        background-color: #ff5500;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        margin: 20px;
+        transition: background-color 0.3s;
+    ">UNMUTE AND PLAY</button>
+
+    <iframe
+        id="soundcloud-widget"
+        width="100%"
+        height="166"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/204978060&auto_play=true&mute=true">
+    </iframe>
+
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var widget = SC.Widget(document.getElementById('soundcloud-widget'));
+            var unmuteButton = document.getElementById('unmute-button');
+
+            unmuteButton.addEventListener('click', function() {
+                widget.unmute();
+                this.style.display = 'none';
+            });
+        });
+    </script>
     
-    <p>yay</p>
+    
 
     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2hT4Po29p6QpO3fJNd96xE?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     
